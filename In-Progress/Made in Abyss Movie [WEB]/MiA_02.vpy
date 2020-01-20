@@ -8,16 +8,14 @@ import vsTAAmbk as taa
 from nnedi3_rpow2 import nnedi3_rpow2
 from vsutil import insert_clip, iterate, get_y, get_w
 
-core.max_cache_size = 3500
+core.max_cache_size = 2500
 
-src_b = nao.src('src/Made in Abyss - Movie 01 (Wakanim SC 1080p).mkv', depth=16)
-src_b = src_b[:170880]
-
-src_a = nao.src('src/Gekijouban Soushuuhen Made in Abyss [2019] [WEB-DL] [1080p] [RUS + JAP]/Gekijouban Soushuuhen Made in Abyss - 01 (WEB-DL 1920x1080 x264 AAC Rus).mkv', depth=16)
-src_a = src_a[:170880]
-
-src_c = nao.src('src/Made in Abyss - Movie 01 (Amazon dAnime VBR 720p).mkv', depth=16)
-src_c = src_c[:170880]
+src_a = nao.src('src/Gekijouban Soushuuhen Made in Abyss [2019] [WEB-DL] [1080p] [RUS + JAP]/Gekijouban Soushuuhen Made in Abyss - 02 (WEB-DL 1920x1080 x264 AAC Rus).mkv', depth=16)
+src_a = src_a[:151968]
+src_b = nao.src('src/Made in Abyss - Movie 02 (Wakanim SC 1080p).mkv', depth=16)
+src_b = src_b[:151968]
+src_c = nao.src('src/Made in Abyss - Movie 02 (Amazon dAnime VBR 720p).mkv', depth=16)
+src_c = src_c[:151968]
 src_c = nnedi3_rpow2(src_c, 2, width=1920, height=1080, nsize=4, nns=2)
 
 #Dialog
@@ -32,18 +30,15 @@ src2 = core.std.MaskedMerge(src_b, src_c, hardsubmask2)
 hardsubmask_fade2 = fvf.Depth(kgf.hardsubmask_fades(src2, src_c, highpass=3500), 16)
 src_fade2 = core.std.MaskedMerge(src2, src_c, hardsubmask_fade2)
 
-#Manual masking (capek asu)
-src = insert_clip(src, src_fade2[170580:170712], 170580)
-src = insert_clip(src, src_fade2[167470:167603], 167470)
-src = insert_clip(src, src_fade2[152854:152953], 152854)
-src = insert_clip(src, src_fade2[89587:89689], 89587)
-src = insert_clip(src, src_fade2[83796:83889], 83796)
-src = insert_clip(src, src_fade2[73893:74065], 73893)
-src = insert_clip(src, src_fade2[46296:46357], 46296)
-src = insert_clip(src, src_fade2[5818:5910], 5818)
-src = insert_clip(src, src_fade2[3041:3202], 3201)
+#Manual Masking Part 2 - ANJING CAPEK GUA
+src = insert_clip(src, src_fade2[143050:143129], 143050)
+src = insert_clip(src, src_fade2[141311:141365], 141311)
+src = insert_clip(src, src_fade2[140830:140885], 140830)
+src = insert_clip(src, src_fade2[12031:12128], 12031)
+src = insert_clip(src, src_fade2[3135:3250], 3135)
+src = insert_clip(src, src_fade2[2062:2206], 2062)
 
-src = nao.rapplym(src, src_fade2, r"C:\Encode Files (Nov 19)\Skrip\mia\masks\01")
+src = nao.rapplym(src, src_fade2, r"C:\Encode Files (Nov 19)\Skrip\mia\masks\02")
 
 descaled = nao.descale(src, get_w(900), 900, "lanczos", taps=5, expandN=3)
 descaled = nnedi3_rpow2(descaled, 2, width=1920, height=1080, nsize=4, nns=2)
