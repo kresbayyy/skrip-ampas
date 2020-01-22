@@ -10,11 +10,13 @@ from vsutil import insert_clip, iterate, get_y, get_w
 
 core.max_cache_size = 2500
 
-src_a = nao.src('src/Gekijouban Soushuuhen Made in Abyss [2019] [WEB-DL] [1080p] [RUS + JAP]/Gekijouban Soushuuhen Made in Abyss - 02 (WEB-DL 1920x1080 x264 AAC Rus).mkv', depth=16)
+src_a = nao.src(r"D:\kresbay nitip\_Fansub\Source\MiA_Movie\Made in Abyss - Movie 02 (Wakanim RU 1080p).mkv", depth=16)
 src_a = src_a[:151968]
-src_b = nao.src('src/Made in Abyss - Movie 02 (Wakanim SC 1080p).mkv', depth=16)
+
+src_b = nao.src(r"D:\kresbay nitip\_Fansub\Source\MiA_Movie\Made in Abyss - Movie 02 (Wakanim SC 1080p).mkv", depth=16)
 src_b = src_b[:151968]
-src_c = nao.src('src/Made in Abyss - Movie 02 (Amazon dAnime VBR 720p).mkv', depth=16)
+
+src_c = nao.src(r"D:\kresbay nitip\_Fansub\Source\MiA_Movie\Made in Abyss - Movie 02 (Amazon dAnime VBR 720p).mkv", depth=16)
 src_c = src_c[:151968]
 src_c = nnedi3_rpow2(src_c, 2, width=1920, height=1080, nsize=4, nns=2)
 
@@ -32,13 +34,19 @@ src_fade2 = core.std.MaskedMerge(src2, src_c, hardsubmask_fade2)
 
 #Manual Masking Part 2 - ANJING CAPEK GUA
 src = insert_clip(src, src_fade2[143050:143129], 143050)
+src = insert_clip(src, src_fade2[142054:142133], 142054)
+src = insert_clip(src, src_fade2[141928:141995], 141928)
 src = insert_clip(src, src_fade2[141311:141365], 141311)
 src = insert_clip(src, src_fade2[140830:140885], 140830)
+src = insert_clip(src, src_fade2[140269:140336], 140269)
+src = insert_clip(src, src_fade2[124402:124461], 124402)
+src = insert_clip(src, src_fade2[91750:91830], 91750)
+src = insert_clip(src, src_fade[58340:58409], 58340)
 src = insert_clip(src, src_fade2[12031:12128], 12031)
 src = insert_clip(src, src_fade2[3135:3250], 3135)
 src = insert_clip(src, src_fade2[2062:2206], 2062)
 
-src = nao.rapplym(src, src_fade2, r"C:\Encode Files (Nov 19)\Skrip\mia\masks\02")
+src = nao.rapplym(src, src_fade2, r"D:\kresbay nitip\_Encode\Skrip\mia\masks\02")
 
 descaled = nao.descale(src, get_w(900), 900, "lanczos", taps=5, expandN=3)
 descaled = nnedi3_rpow2(descaled, 2, width=1920, height=1080, nsize=4, nns=2)

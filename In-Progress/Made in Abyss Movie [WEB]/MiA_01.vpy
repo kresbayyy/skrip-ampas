@@ -8,15 +8,15 @@ import vsTAAmbk as taa
 from nnedi3_rpow2 import nnedi3_rpow2
 from vsutil import insert_clip, iterate, get_y, get_w
 
-core.max_cache_size = 3500
+core.max_cache_size = 5250
 
-src_b = nao.src('src/Made in Abyss - Movie 01 (Wakanim SC 1080p).mkv', depth=16)
-src_b = src_b[:170880]
-
-src_a = nao.src('src/Gekijouban Soushuuhen Made in Abyss [2019] [WEB-DL] [1080p] [RUS + JAP]/Gekijouban Soushuuhen Made in Abyss - 01 (WEB-DL 1920x1080 x264 AAC Rus).mkv', depth=16)
+src_a = nao.src(r"D:\kresbay nitip\_Fansub\Source\MiA_Movie\Made in Abyss - Movie 01 (Wakanim RU 1080p).mkv", depth=16)
 src_a = src_a[:170880]
 
-src_c = nao.src('src/Made in Abyss - Movie 01 (Amazon dAnime VBR 720p).mkv', depth=16)
+src_b = nao.src(r"D:\kresbay nitip\_Fansub\Source\MiA_Movie\Made in Abyss - Movie 01 (Wakanim SC 1080p).mkv", depth=16)
+src_b = src_b[:170880]
+
+src_c = nao.src(r"D:\kresbay nitip\_Fansub\Source\MiA_Movie\Made in Abyss - Movie 01 (Amazon dAnime VBR 720p).mkv", depth=16)
 src_c = src_c[:170880]
 src_c = nnedi3_rpow2(src_c, 2, width=1920, height=1080, nsize=4, nns=2)
 
@@ -43,7 +43,7 @@ src = insert_clip(src, src_fade2[46296:46357], 46296)
 src = insert_clip(src, src_fade2[5818:5910], 5818)
 src = insert_clip(src, src_fade2[3041:3202], 3201)
 
-src = nao.rapplym(src, src_fade2, r"C:\Encode Files (Nov 19)\Skrip\mia\masks\01")
+src = nao.rapplym(src, src_fade2, r"D:\kresbay nitip\_Encode\Skrip\mia\masks\01")
 
 descaled = nao.descale(src, get_w(900), 900, "lanczos", taps=5, expandN=3)
 descaled = nnedi3_rpow2(descaled, 2, width=1920, height=1080, nsize=4, nns=2)
