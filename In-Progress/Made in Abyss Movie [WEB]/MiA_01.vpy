@@ -41,7 +41,8 @@ src = insert_clip(src, src_fade2[83796:83889], 83796)
 src = insert_clip(src, src_fade2[73893:74065], 73893)
 src = insert_clip(src, src_fade2[46296:46357], 46296)
 src = insert_clip(src, src_fade2[5818:5910], 5818)
-src = insert_clip(src, src_fade2[3041:3202], 3201)
+src = insert_clip(src, src_fade2[5624:5778], 5624)
+src = insert_clip(src, src_fade2[3041:3202], 3041)
 
 src = nao.rapplym(src, src_fade2, r"D:\kresbay nitip\_Encode\Skrip\mia\masks\01")
 
