@@ -8,7 +8,7 @@ import vsTAAmbk as taa
 from nnedi3_rpow2 import nnedi3_rpow2
 from vsutil import insert_clip, iterate, get_y, get_w
 
-core.max_cache_size = 2500
+core.max_cache_size = 5250
 
 src_a = nao.src(r"D:\kresbay nitip\_Fansub\Source\MiA_Movie\Made in Abyss - Movie 02 (Wakanim RU 1080p).mkv", depth=16)
 src_a = src_a[:151968]
