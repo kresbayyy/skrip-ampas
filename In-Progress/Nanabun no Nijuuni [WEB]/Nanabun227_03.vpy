@@ -11,8 +11,8 @@ core = vs.core
 
 core.max_cache_size = 4500
 
-#waka = lvf.src(r"C:\Encode\[Source]\Nanabun\227_03_EN_HD.mp4")
-#funi = lvf.src(r"C:\Encode\[Source]\Nanabun\[HorribleSubs] Nanabun no Nijyuuni - 03 [1080p].mkv")
+funi = nao.src(r"C:\Encode\[Source]\Nanabun\[HorribleSubs] Nanabun no Nijyuuni - 03 [1080p].mkv", depth=16)
+waka = nao.src(r"C:\Encode\[Source]\Nanabun\227_03_EN_HD.mp4", depth=16)
 
 waka = waka[0]+waka[:12700]+waka[12699]*5+waka[12700:]
 funi = funi[289:]
