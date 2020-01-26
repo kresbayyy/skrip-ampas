@@ -14,8 +14,9 @@ core.max_cache_size = 4500
 funi = nao.src(r"C:\Encode\[Source]\Nanabun\[HorribleSubs] Nanabun no Nijyuuni - 03 [1080p].mkv", depth=16)
 waka = nao.src(r"C:\Encode\[Source]\Nanabun\227_03_EN_HD.mp4", depth=16)
 
-waka = waka[0]+waka[:12700]+waka[12699]*5+waka[12700:]
+waka = waka[0]+waka[:12700]+waka[12699]*5+waka[12700:34396]+waka[34396]+waka[34396:]
 funi = funi[289:]
+waka = fvf.rfs(waka, funi, f"[0 1]")
 #funi = funi[1:12701]+funi[12706:34403]+funi[34404:34523]
 
 src_mask1 = kgf.hardsubmask(waka, funi)
