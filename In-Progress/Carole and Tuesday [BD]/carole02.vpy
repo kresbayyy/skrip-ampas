@@ -14,7 +14,7 @@ core.max_cache_size = 4000
 
 src = nao.src(r"E:\BDMV\キャロル＆チューズデイ Blu-ray Disc BOX Vol.1\DISC1\BDMV\STREAM\00001.m2ts", depth=16)
 src = core.edgefixer.ContinuityFixer(src, 1, 1, 1, 1, 2)
-src = src[:32846]
+src = src[:32846+1]
 
 descaled = fvf.Debicubic(src, 1280, 720, b=0, c=1, yuv444=True)
 
