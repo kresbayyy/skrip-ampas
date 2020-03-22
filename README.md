@@ -6,9 +6,9 @@ I'm noob and nearsighted.
 ---
 Groups :
 - [Bebas-Raws](https://nyaa.si/?f=0&c=0_0&q=bebas-raws)
-- [Fumei](https://nyaa.si/user/Fumei) (ded)
+- [Caramel Fansub](https://caramel.fansub.id/) (Indonesian Fansub)
+- [Fumei](https://nyaa.si/user/Fumei) (ded thx)
 - [NSSKL](https://anime.nerjemah.in/) (Indonesian Fansub)
-- [Pon-Raws] :^)
 
 Feel free to re-use these scripts. However, these are not perfect tho.
 
