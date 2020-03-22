@@ -22,6 +22,6 @@ vid = kgf.adaptive_grain(vid, 0.37, luma_scaling=16)
 #vid = taa.TAAmbk(vid, "Nnedi3", cycle=2)
 vid = fvf.Depth(vid, 10)
 
-vid = vid[24:-24]
+vid = vid[24:-35]
 
 vid.set_output()
